@@ -1,12 +1,70 @@
-h1 {
-    color: #ff3200;
+#SiteHeader {
+    overflow: hidden;
+}
+#SiteHeader img{
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+}
+
+#SiteHeader h1 {
+    color: #323232;
+    margin-top: -150px;
+    margin-left: 85px;
+    position: absolute;
+    font-size: 3em;
+    font-family: "comic sans", cursive;
 }
 
 body {
-    background-color: #133222;
+    background-color: #eeeeee;
     font-family: arial;
+    font-size: 23px;
+}
+
+button {
+    display: inline-block;
+    text-align: center;
+}
+button:hover {
+    background-color: black;
+}
+
+.menu {
+
+}
+
+.menu table {
+    background-color: #ffffff;
+    border: 2px solid black;
+}
+
+.menu table td h3 {
+    text-align: center;
+}
+
+.menu table td img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.customer {
+    background-color: #dedeff;
+    border-left: 0.2em dotted black;
+    border-bottom: 0.2em dotted black;
+    padding: 20px;
+    margin-bottom: 0.2em;
+    font-size: 0.75em;
 }
 
 p {
-    background-color: #feaefe;
+    padding: 0.5em;
+}
+
+footer {
+    margin-top: 15px;
+    text-align: right;
+    font-size: 0.6em;
+    border-top: 0.1em solid black;
 }
