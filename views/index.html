@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <title>X-ray Bürgers</title>
+
     <script src="/js/js_script.js"></script>
-    <script src="/js/vue_script.js"></script>
     <script src="https://vuejs.org/js/vue.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -16,11 +16,18 @@
 	<h1>Välkommen till X-ray Bürgers</h1>
       </header>
 
+      <div id="burgerMenu">
+	<ul>
+	  <li v-for="burger in burgers">{{burger.name}}</li>
+	</ul>
+      </div>
+
       <section class="menu">
 	<h2>Välj meny</h2>
 	<p>
 	  Välj mellan våra tre fantastiska burgare gjorda på ekologiskt benmjöl och leverpastej.
 	</p>
+
 	<table>
 	  <tr>
 	    <td><h3>Nagasaké</h3></td>
@@ -109,5 +116,6 @@
       <br />
       Crimson Burgers ltd 2020
     </footer>
+    <script src="/js/vue_script.js"></script>
   </body>
 </html>

@@ -1,7 +1,3 @@
-const vm = new Vue({
-
-})
-
 
 function Burger(name, img_fp, pos, allergies){
     this.name = name;
@@ -12,6 +8,10 @@ function Burger(name, img_fp, pos, allergies){
 	return this.name;
     };
 }
-
-let nagasake = new Burger("Nagasaké", "https://image.shutterstock.com/image-photo/japanese-black-burger-cheese-cheeseburger-600w-333977423.jpg",
+let burger1 = new Burger("Nagasaké", "https://image.shutterstock.com/image-photo/japanese-black-burger-cheese-cheeseburger-600w-333977423.jpg",
 			  200, ["Beryllium", "Radon"])
+
+let burger2 = new Burger("Kärnobyl", "https://image.shutterstock.com/image-photo/japanese-black-burger-cheese-cheeseburger-600w-333977423.jpg",
+			  200, ["Beryllium", "Radon"])
+
+let burger3 = new Burger("Harrisburger", "a", 200, ["Wheat", "Radon"])
