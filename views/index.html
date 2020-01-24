@@ -35,10 +35,12 @@
 
       <div id="order" class="customer">
 	<div id="customer" v-if="orderOn">
+	  <button v-on:click="cancelOrder()">Avbryt</button>
 	  <h3>Beställning</h3>
-	  <label v-for="info in customer">
-	    <input :type="info.type" :id="info.name" :placeholder="info.name"/></br>
-	  </label>
+	  <div v-for="info in customer">
+	    <label for="info.name">{{info.name}}</label><br>
+	    <input :type="info.type" :id="info.name" :placeholder="info.def"/></br>
+	  </div>
 
 	  <h4>Betalningsmetod</h4>
 	  <select id="payment" name="pay">
@@ -50,13 +52,12 @@
 	    <input type="radio" name="gender" :value="g">
 	    {{g}}
 	  </div>
+
 	</div>
 	<button v-on:click="makeOrder()">{{btnTitle}}</button>
       </div>
-
     </div>
     <footer>
-      <br />
       Crimson Burgers ltd 2020
     </footer>
 

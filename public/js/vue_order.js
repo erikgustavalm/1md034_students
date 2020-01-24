@@ -3,10 +3,10 @@ new Vue({
     data: {
 	orderOn: false,
 	btnTitle: "Lägg en beställning",
-	customer: [{name: "fullständing namn", type: "text"} ,
-		   {name: "adress för leverans", type: "text"},
-		   {name: "husnummer", type: "number"},
-		   {name: "mailadress", type: "text"}],
+	customer: [{name: "Fullständigt namn", type: "text", def: "Namn Namnsson"} ,
+		   {name: "Adress för leverans", type: "text", def: "testgatan"},
+		   {name: "Husnummer", type: "number", def: "0"},
+		   {name: "Mailadress", type: "text", def: "namn@namnsson.com"}],
 	payOpt: ["Swish", "Kottar", "MasterCard", "Natura"],
 	gender: ["Man", "Kvinna", "Annat"]
     },
@@ -19,6 +19,10 @@ new Vue({
 		this.btnTitle = "Lägg en beställning";
 		alert("Beställning slutförd");
 	    }
+	},
+	cancelOrder: function(){
+	    this.orderOn = false;
+	    this.btnTitle = "Lägg en beställning";
 	}
     }
 })

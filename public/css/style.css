@@ -11,7 +11,7 @@
 .header img {
     width:100%;
     height: auto;
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 .header-text {
@@ -99,4 +99,12 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 0.9em;
+}
+
+footer {
+    text-align: right;
+    background-color: #323232;
+    padding: 10px;
+    color: #dddddd;
+    border-top: 5px ridge #39814e;
 }
