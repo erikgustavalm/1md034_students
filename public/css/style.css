@@ -1,70 +1,87 @@
-#SiteHeader {
-    overflow: hidden;
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 260px) 1fr;
 }
-#SiteHeader img{
-    width: 100%;
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    position: relative;
+}
+.header img {
+    width:100%;
     height: auto;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
-#SiteHeader h1 {
-    color: #323232;
-    margin-top: -150px;
-    margin-left: 85px;
+.header-text {
+    text-align: center;
+    font-family: "comic sans", cursive, bold;
+    font-size: 5em;
+    color: #39814e;
+
     position: absolute;
-    font-size: 3em;
-    font-family: "comic sans", cursive;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-body {
-    background-color: #eeeeee;
-    font-family: arial;
-    font-size: 23px;
-}
-
-button {
-    display: inline-block;
+.wrapper h3 {
+    grid-area: 2 / 3 / 2 / 4;
     text-align: center;
-}
-button:hover {
-    background-color: black;
-}
-
-.menu {
-
-}
-
-.menu table {
-    background-color: #ffffff;
-    border: 2px solid black;
-}
-
-.menu table td h3 {
-    text-align: center;
-}
-
-.menu table td img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    color: #eeeeee;
+    background-color: #323232;
+    font-size: 1.3em;
+    height: 30px;
 }
 
 .customer {
-    background-color: #dedeff;
-    border-left: 0.2em dotted black;
-    border-bottom: 0.2em dotted black;
-    padding: 20px;
-    margin-bottom: 0.2em;
-    font-size: 0.75em;
+    margin-top: 30px;
+    padding: 30px;
+    grid-area: 4 / 3 / 5 / 4;
+}
+.customer input {
+    padding: 10px;
+    margin: 4px;
+}
+.customer button {
+    margin-top: 10px;
 }
 
-p {
-    padding: 0.5em;
+.content {
+    grid-area: 3 / 2 / 4 / 5;
+    display: flex;
+    overflow-y: auto;
+    flex-wrap: wrap;
+    align-content: start;
+    justify-content: center;
+    background-color: #808080;
+    border: 2px dashed #323232;
+    border-radius: 5px;
+    height: 800px;
 }
 
-footer {
-    margin-top: 15px;
-    text-align: right;
-    font-size: 0.6em;
-    border-top: 0.1em solid black;
+.menuItem {
+    background-color: white;
+    border-radius: 5px;
+    width: 240px;
+    height: 350px;
+    margin-top: 10px;
+    margin-left: 4px;
+    margin-right: 4px;
+    text-align: center;
+}
+
+.menuItem img {
+    padding: 10px;
+    width: 90%;
+    height: 50%;
+}
+
+.menuItem li {
+    list-style-type: none;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9em;
 }

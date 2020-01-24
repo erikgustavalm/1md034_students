@@ -10,112 +10,54 @@
   </head>
 
   <body>
-    <main>
-      <header id="SiteHeader">
-	<img src="https://group.vattenfall.com/se/siteassets/sverige/forsmark/forsmark_5x3.jpg">
-	<h1>Välkommen till X-ray Bürgers</h1>
-      </header>
-
-      <div id="burgerMenu">
-	<ul>
-	  <li v-for="burger in burgers">{{burger.name}}</li>
-	</ul>
+    <div class="wrapper">
+      <div id="siteHeader" class="header">
+	  <img :src="image">
+	  <h1 class="header-text">{{title}}</h1>
       </div>
 
-      <section class="menu">
-	<h2>Välj meny</h2>
-	<p>
-	  Välj mellan våra tre fantastiska burgare gjorda på ekologiskt benmjöl och leverpastej.
-	</p>
+      <h3>Välj Meny</h3>
+      <div id="burgerMenu" :class="'content'">
+	  <div v-for="burger in burgers" :class="'menuItem'">
+	    <h3>{{burger.name}}</h3>
+	    <img :src="burger.img_fp">
+	    {{burger.desc}}
+	    <ul>
+	      <li v-for="allergie in burger.allergies">{{allergie}}</li>
+	    </ul>
+	  </div>
+      </div>
 
-	<table>
-	  <tr>
-	    <td><h3>Nagasaké</h3></td>
-	    <td><h3>Kärnobyl</h3></td>
-	    <td><h3>Harrisburger</h3></td>
-	  </tr>
 
-	  <tr>
-	    <td><img src="https://image.shutterstock.com/image-photo/japanese-black-burger-cheese-cheeseburger-600w-333977423.jpg" width="200"></td>
-	    <td><img src="https://infiniteunknown.net/wp-content/uploads/2011/12/Cheeseburger.jpg" width="200"></td>
-	    <td><img src="https://s3-us-west-2.amazonaws.com/hispotion-prod/wp-content/uploads/2015/12/fergburger-600x450.jpg" width="200"></td>
-	  </tr>
+      <div id="order" class="customer">
+	<div id="customer" v-if="orderOn">
+	  <h3>Beställning</h3>
+	  <label v-for="info in customer">
+	    <input :type="info.type" :id="info.name" :placeholder="info.name"/></br>
+	  </label>
 
-	  <tr>
-	    <td>
-	      <ul>
-		<li>Sås gjord på slattarna från en
-		  närliggande japansk kareokebar</li>
-		<li>Bröd i smaskig granit</li>
-		<li>Innehåller sten</li>
-	      </ul>
-	    </td>
-	    <td>
-	      <ul>
-		<li>Lägger sig som en betongsarkofag i magen</li>
-		<li>Innehåller hela kostcirkeln enligt Sovjetisk tallriksmodell</li>
-	      </ul>
-	    </td>
-	    <td>
-	      <ul>
-		<li>Inte helt sannolikt att denna burgare finns</li>
-		<li>Kan innehålla spår av nötter</li>
-	      </ul>
-	    </td>
-	  </tr>
-	</table>
-      </section>
-
-      <section class="customer">
-	<h2>Kundinformation</h2>
-	<p>
-	  Om du mot förmodan vill lämna ut dina uppgifter till oss, var god gör det nedan.
-	</p>
-
-	<p>
-	  <label for="name">Namn</label><br>
-	  <input type="text" id="name" name="fn" required="required" placeholder="fullständigt namn" />
-	</p>
-	<p>
-	  <label for="email">E-Mail</label><br>
-	  <input type="email" id="email" name="em" required="required" placeholder="address@testmail.com" />
-	</p>
-	<p>
-	  <label for="street">Gatunamn</label><br>
-	  <input type="street" id="street" name="ad" required="required" placeholder="testvägen" />
-	</p>
-	<p>
-	  <label for="number">Husnummer</label><br>
-	  <input type="number" id="number" name="nmb" required="required" placeholder="XX"/>
-	</p>
-
-	<h3>Betalningsmetod</h3>
-	<p>
+	  <h4>Betalningsmetod</h4>
 	  <select id="payment" name="pay">
-	    <option>Swish</option>
-	    <option>Check</option>
-	    <option>Natura</option>
-	    <option>Kapsyler</option>
-	    <option>Kottar</option>
+	    <option v-for="opt in payOpt">{{opt}}</option>
 	  </select>
-	</p>
-	<p>
-	  Att du meddelar oss kön är av yttersta vikt. <br>
-	  <input type="radio" name="gender" value="male"> Man<br>
-	  <input type="radio" name="gender" value="female"> Kvinna<br>
-	  <input type="radio" name="gender" value="other" checked="checked"> Annat <br>
-	</p>
-      </section>
-      <button type="submit">
-	Klar
-	<img src="https://images.vexels.com/media/users/3/157931/isolated/preview/604a0cadf94914c7ee6c6e552e9b4487-curved-check-mark-circle-icon-by-vexels.png" width="20"/>
-      </button>
-    </main>
 
+	  <h4>Kön</h4>
+	  <div v-for="g in gender">
+	    <input type="radio" name="gender" :value="g">
+	    {{g}}
+	  </div>
+	</div>
+	<button v-on:click="makeOrder()">{{btnTitle}}</button>
+      </div>
+
+    </div>
     <footer>
       <br />
       Crimson Burgers ltd 2020
     </footer>
+
+    <script src="/js/vue_order.js"></script>
     <script src="/js/vue_script.js"></script>
+    <script src="/js/vue_header.js"></script>
   </body>
 </html>
