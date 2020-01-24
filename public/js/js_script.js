@@ -1,8 +1,8 @@
 
-function Burger(name, img_fp, desc, pos, allergies){
+function Burger(name, img_fp, desc, kcal, allergies){
     this.name = name;
     this.img_fp = img_fp;
-    this.pos = pos;
+    this.kcal = kcal;
     this.desc = desc;
     this.allergies = allergies;
     this.getName = function(){
@@ -36,7 +36,7 @@ let burger5 = new Burger("FuckUShima",
 			 "https://media.istockphoto.com/photos/colorful-japanese-sushi-roll-on-a-white-background-picture-id467135567",
 			 "Gojiras favorit",
 			 200,
-			 ["Lingon", "Radon"])
+			 ["Lingon", "Radon", "Natrium", "Fiskpulver"])
 let burger6 = new Burger("Bikini Island",
 			 "https://image.shutterstock.com/image-photo/hawaiian-tropical-hamburger-pineapple-isolated-260nw-1124631896.jpg",
 			 "(På tillfälligt besök)",
@@ -46,7 +46,7 @@ let burger7 = new Burger("Ofarlig",
 			 "https://ak7.picdn.net/shutterstock/videos/658567/thumb/1.jpg",
 			 "Helt utan radioaktiv behandling",
 			 200,
-			 ["Lingon", "Radon"])
+			 ["Lingon", "Radon", "Bävernylon", "Nötter"])
 
 function Customer(name, gender, address){
     this.name = name;

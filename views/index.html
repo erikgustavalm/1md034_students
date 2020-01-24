@@ -21,10 +21,14 @@
 	  <div v-for="burger in burgers" :class="'menuItem'">
 	    <h3>{{burger.name}}</h3>
 	    <img :src="burger.img_fp">
-	    {{burger.desc}}
-	    <ul>
-	      <li v-for="allergie in burger.allergies">{{allergie}}</li>
-	    </ul>
+	    "{{burger.desc}}"
+	    <div class="aller">
+	      <p>kcal: {{burger.kcal}}</p>
+	      <p>Allergier</p>
+	      <ul>
+		<li v-for="allergie in burger.allergies">{{allergie}}</li>
+	      </ul>
+	    </div>
 	  </div>
       </div>
 

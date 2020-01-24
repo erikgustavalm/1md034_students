@@ -32,6 +32,7 @@
     color: #eeeeee;
     background-color: #323232;
     font-size: 1.3em;
+    border-top: 4px solid #39814e;
     height: 30px;
 }
 
@@ -65,11 +66,12 @@
     background-color: white;
     border-radius: 5px;
     width: 240px;
-    height: 350px;
+    height: 380px;
     margin-top: 10px;
     margin-left: 4px;
     margin-right: 4px;
     text-align: center;
+    font-style: italic;
 }
 
 .menuItem img {
@@ -78,7 +80,20 @@
     height: 50%;
 }
 
-.menuItem li {
+.aller {
+    text-align: left;
+    background-color: #dddddd;
+    border-radius: 4px;
+    height: 60px;
+    overflow-y: auto;
+}
+
+
+.aller p {
+    margin-left: 10px;
+    font-size: 0.8em;
+}
+.aller li {
     list-style-type: none;
     text-align: left;
     text-transform: uppercase;
